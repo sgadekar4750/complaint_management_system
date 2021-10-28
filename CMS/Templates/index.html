@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home page</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'home.css'%}">
+</head>
+<body>
+	<div class="header">
+			<h1>{% if user.is_authenticated %}
+    			<h1> <center> Welcome </center>
+			<p>Username :- {{ user.username }}.</p> 
+			<p>Id number :- {{user.id}}</p><br/>Thanks for logging in.
+	
+			{% else %}
+    			<h1><center> Welcome </center></h1>
+			{% endif %}
+	</div>
+	
+	<div class="Home-page">
+		<h2>Home page</h2>
+
+		
+
+	     <form action="" method="post">
+			<button type="submit"><a href="{% url 'CMS:viewscomplaint' %}"> List of Complaints </a></button>
+	    <br></form><hr/>
+            <form action="" method="post">
+				<button type="submit"><a href="{% url 'CMS:viewsemp' %}"> List Of Employees </a></buton></a>
+			<br></form>
+			
+	</div>
+	</div>
+	<div class="admin-login">
+		<form action="" method="post">
+			<button type="submit"><a href="{% url 'CMS:logout' %}">Logout</a></button>
+	
+		</form>
+	<div class="header">
+			
+			
+			<h3><p>Total Complaint :- {{total_complaint}}</p><br/></h3>
+	
+			
+	</div>
+	</div>
+
+	
+
+</body>
+</html>

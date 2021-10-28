@@ -1,0 +1,63 @@
+
+
+
+{% load static %}
+
+<div class="admin-login">
+		<form action="" method="post">
+			<button type="submit"><a href="{% url 'CMS:logout' %}">Logout</a></button>
+			<button type="submit"><a href="{% url 'CMS:aindex' %}">Back</a></button>
+		</form>
+</div>
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{% static 'vc.css'%}">
+</head>
+<body>
+
+<br>
+<h1>
+	<form action="{% url 'CMS:viewsemp' %}" method="get">
+	<input type="text" name="name"placeholder="Enter The Zone Name">
+	<input type="submit" value="Search">
+</form></h1>
+	{% for message in messages %}
+					<center><h1><p id="messages">{{message}}</p></h1></center>
+	{% endfor %}
+
+
+
+<center><h1>List Of Employee</h1></center>
+ <table class="ZEBRA"> 
+<thead> 
+<tr><th>Employee ID</th>
+							<th>First Name</th><br>
+							<th>Last Name</th>
+							<th>Zone</th>
+							<th>Work Type</th>
+							<th>Phone No</th>
+						</tr> 
+</thead> 
+<tbody> 
+	
+{% if data %}
+
+
+{% for i in data %}
+							<tr>
+								<td>{{i.id}}</td>
+								<td>{{i.first_name}}</td>
+								<td>{{i.last_name}}</td>
+								<td>{{i.zone}}</td>
+								<td>{{i.work_type}}</td>
+								<td>{{i.contact_no}}</td>
+							</tr>
+{% endfor %}
+{% endif %}
+
+</tbody> 
+</table> 
+</body>
+</html>
+

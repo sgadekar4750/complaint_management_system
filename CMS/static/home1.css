@@ -1,0 +1,74 @@
+* {
+	padding: 0;
+	margin: 0;
+	font-family: sans-serif;
+}
+
+body {
+	background-image: url('./black2.jpg');
+	background-size: cover;
+}
+
+.Home-page {
+	width: 350px;
+	top: 40%;
+	left: 45%;
+	transform:translate(-50%, -50);
+	position: absolute;
+	color: #ffff; 
+}
+.Home-page button{
+	color: grey;
+	font-size: 20px;
+	font-weight: bold;
+	margin: 20px 0;
+	padding: 10px 15px
+	width: 70%;
+	border-radius: 5px;
+	border: 0;
+}
+
+.Home-page button:hover{ 
+	color: blue;
+
+}
+
+
+.admin-login {
+	position: absolute; 
+    top: 10px; 
+    right: 10px; 
+}
+
+.admin-login button{
+	color: green;
+	font-size: 17px;
+	font-weight: inherit;
+	margin: 15px, 0;
+	padding: 25px 25px
+	width: 50%;
+	border-radius: 5px;
+	border: 0;
+}
+
+.admin-login button:hover{
+	color: blue;
+}
+
+.header h6{
+	color: yellow;
+        alingment: center;
+	
+	font-family: serif;
+	
+	
+}
+
+.Home-page h2{
+	color: red;
+	font-size: 30px;
+	font-family: serif;
+	margin: 15px, 0;
+	padding: 10px 15px
+	
+}

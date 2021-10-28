@@ -1,0 +1,47 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'vc.css'%}">
+<a href="{% url 'CMS:index' %}">
+<button type="back">Back</button></a>
+<br>
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<center><h1>   Complaint List </h1></center>
+		</div>
+		<div class="card card-body">
+		<style>  
+        	table{  
+            			border-collapse: collapse;  
+           				 width: 100%;   
+        				}  
+    				th,td{  
+        			border: 2px solid green;   
+        			padding: 15px;  
+    		}  
+		</style> 
+		<table border="0">  
+			<tr>
+							
+							<th> Compliant id </th>
+							<th> Date <th>
+							<th> Type of complaint <th>
+			</tr>
+
+			{% for i in data %}
+			<tr>
+								
+				<td>{{i.user_id}}</td>
+				<td>{{i.type_of_complaint}}</td>
+				<td>{{i.date}}</td>
+								
+				<td><a class="btn btn-sm btn-info" href="{% url 'CMS:update' i.user_id %}">Update<a></td>
+			</tr>
+			{% endfor %}
+						
+					</table>
+				</div>
+			</div>
+			
+		</div>
+

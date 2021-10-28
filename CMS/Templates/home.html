@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Home page</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'home.css'%}">
+</head>
+<body>
+
+	
+	<div class="Home-page">
+		
+
+		<form action="" method="post">
+			<br>
+			<br>
+			<br>
+			<br>
+			<button type="submit"><a href="{% url 'CMS:plogin' %}">Public Login</button></a>
+
+            <br></form>
+            <hr/>
+            <form action="" method="post">
+			<button type="submit"><a href="{% url 'CMS:login' %}">Admin Login</button></a>
+			<br></form>
+			
+	</div>
+	<div class="header">
+		<center><h2>Home page</h2></center>
+		<br><br>
+		<h1>*This is a Complaint management system.</h1>
+		<h1>*You can register your complaint online.</h1>
+		<h1>*Kindly login and lodge your Complaint.</h1>
+		<h1>*If you do not have account please register your self.</h1>
+	</div>
+
+		
+	
+
+</body>
+</html>

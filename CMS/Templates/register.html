@@ -1,0 +1,136 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Registration Form</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'register.css'%}">
+</head>
+<body>
+
+	<div class="home-page">
+		<form action="" method="post">
+			<button type="submit"><a href="{% url 'CMS:home' %}">Home Page</a></button>
+			
+
+		</form>
+
+
+	<div class="registration-form">
+
+		<h1>Registration form</h1>
+		<form method="POST" action="">
+			{% csrf_token %}
+			<div class="input-group mb-3">
+							<p>User Name</p>
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							
+								{{profile_form.username}}
+							</div>
+						
+							<p>Email Id</p>
+						
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-envelope-square"></i></span>
+							
+							{{profile_form.email}}
+						
+							<p>Password</p>
+						
+							<div class="input-group-append">
+								<div class="select-box">
+										<span class="input-group-text"><i class="fas fa-key"></i></span>
+								</div>
+							</div>
+							{{profile_form.password}}
+					
+							<p>Full Name</p>
+						
+							<div class="input-group-append">
+								<span class="input-group-text"placeholder="Full Name"><i class="fas fa-key"></i></span>
+							</div>
+							{{info_form.first_name}}
+							
+							<p>Last Name</p>
+						
+							<div class="input-group-append">
+								<span class="input-group-text"placeholder="Full Name"><i class="fas fa-key"></i></span>
+							</div>
+							{{info_form.last_name}}
+							</br>
+							<p>Gender</p>
+						
+							<div class="input-group mb-2">
+								<div class="select-box">
+									<span class="input-group-text"><i class="fas fa-envelope-square"></i></span>
+
+								
+									{{info_form.gender}}
+								</div>
+							
+							</div>
+						
+							<p>Tax ID Number</p>
+						
+							<div class="input-group-append">
+								<span class="input-group-text"placeholder="Full Name"><i class="fas fa-key"></i></span>
+							
+								{{info_form.tax_id_number}}
+							</div>
+					
+							<p>Age</p>
+						
+							<div class="input-group-append">
+								<span class="input-group-text"placeholder="Full Name"><i class="fas fa-key"></i></span>
+							
+								{{info_form.age}}
+							</div>
+				
+							<p>Address</p>
+						
+							<div class="input-group-append">
+								<span class="input-group-text"placeholder="Full Name"><i class="fas fa-key"></i></span>
+							
+								{{info_form.address}}
+							</div>
+							<p>Area</p>
+		
+							<div class="input-group-append">
+								<span class="input-group-text"placeholder="Full Name"><i class="fas fa-key"></i></span>
+							
+								{{info_form.area}}
+							</div>
+							<p>Pin</p>
+						
+							<div class="input-group-append">
+								<span class="input-group-text"placeholder="Full Name"><i class="fas fa-key"></i></span>
+							
+								{{info_form.pin}}
+							</div>
+						
+							
+							<p>Mobile Number</p>
+						
+							<div class="input-group-append">
+								<span class="input-group-text"placeholder="Full Name"><i class="fas fa-key"></i></span>
+							
+								{{info_form.mobile}}
+							</div>
+							</br>
+							<div class="form-group">
+								<input class="btn btn-success" type="submit" name="submit" value="Registration" />
+							</div>
+			
+			
+
+		</form>
+		{% for message in messages %}
+					<p id="messages">{{message}}</p>
+		{% endfor %}
+		
+	</div>
+
+</body>
+</html>

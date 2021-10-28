@@ -1,0 +1,61 @@
+
+
+
+{% load static %}
+<div class="admin-login">
+		<form action="" method="post">
+			<button type="submit"><a href="{% url 'CMS:logout' %}">Logout</a></button>
+			<button type="submit"><a href="{% url 'CMS:index' %}">Back</a></button>
+		</form>
+</div>
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{% static 'vc.css'%}">
+</head>
+<body>
+<h1>  List of My Complaints</h1>
+<br>
+<h1>
+	<form action="{% url 'CMS:vcd' %}" method="get">
+	<input type="text" name="name" placeholder="User ID">
+	<input type="submit" value="Search">
+</form></h1>
+	{% for message in messages %}
+					<center><h1><p id="messages">{{message}}</p></h1></center>
+	{% endfor %}
+
+
+
+
+ <table class="ZEBRA"> 
+<thead> 
+<tr>
+							<th> Ser_id </th><br>
+							<th> User_id</th><br>
+							<th> Date </th>
+							<th> Type Complaint</th>
+
+							
+						</tr> 
+</thead> 
+<tbody> 
+	
+{% if data %}
+
+
+{% for i in data %}
+							<tr>
+								<td>{{i.id}}</td>
+								<td>{{i.user_id}}</th><br>
+								<td>{{i.date_created}}</th><br>
+								<td>{{i.type_of_complaint}}</td>
+								
+							</tr>
+{% endfor %}
+{% endif %}
+
+</tbody> 
+</table> 
+</body>
+</html>

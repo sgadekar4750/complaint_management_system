@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+{% load static %}
+	<title> Complaint Form</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'Complaint.css'%}">
+</head>
+<div class="admin-login">
+		<form action="" method="post">
+			<button type="submit"><a href="{% url 'CMS:logoutp' %}">Logout</a></button>
+			<button type="submit"><a href="{% url 'CMS:index' %}">Back</a></button>
+		</form>
+</div>
+
+<body>
+
+	<div class="home-page">
+		<form action="" method="post">
+			
+
+		</form>
+
+	<div class="container">
+
+		<h1>Register Complaint </h1><br><br>
+		<form method="POST" action="">
+			{% csrf_token %}
+			<div class="input-group mb-3">
+							
+							<p>Slect Sub Muncipal Division</p>
+							<div class="input-group mb-2">
+								<div class="select-box">
+										<span class="input-group-text"><i class="fas fa-envelope-square"></i></span>
+								
+								{{data.sub_muncipal_division}}
+								</div>
+							</div>
+						<p>Area</p>
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<span class="input-group-text"placeholder="Area"><i class="fas fa-key"></i></span>
+							
+								{{data.area}}
+							</div>
+						</div>
+						<p>Address</p>
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<span class="input-group-text"placeholder="Address"><i class="fas fa-key"></i></span>
+							</div>
+							{{data.address}}
+						</div>
+
+						<p>Select Problem</p>
+						<div class="input-group mb-2">
+								<div class="select-box">
+										<div class="input-group-append">
+											<span class="input-group-text"><i class="fas fa-key"></i></span>
+								{{data.type_of_complaint}}
+										</div>
+								</div>
+						</div>
+						<p>User<p>
+						<div class="input-group mb-2">
+								<div class="select-box">
+										<div class="input-group-append">
+											<span class="input-group-text"><i class="fas fa-key"></i></span>
+								{{data.user}}
+										</div>
+								</div>
+						</div>
+						<p> Complaint Discription</p>
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<span class="input-group-text"placeholder="Complaint Discription"><i class="fas fa-key"></i></span>
+							
+								{{data.complaint_desc}}
+							</div>
+						</div>
+						
+						
+						
+					<center><button type="submit">Submit</button></center>
+
+			</form>			
+
+		{% for message in messages %}
+					<p id="messages">{{message}}</p>
+		{% endfor %}
+	
+		
+		
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'vc.css'%}">
+<div class="admin-login">
+		<form action="" method="post">
+			<button type="submit"><a href="{% url 'CMS:logout' %}">Logout</a></button>
+			<button type="submit"><a href="{% url 'CMS:aindex' %}">Back</a></button>
+		</form>
+</div>
+<h1>
+	<center><h1>  Search  Zonewise  Employee </h1></center>
+
+	<div class="col-md-6">
+		<div class="update">
+
+			<form action="" method="POST">
+				{% csrf_token %}
+				{{form}}
+				
+			 </br>
+			 </br>
+			  <input class="btn btn-success" type="submit" name="submit" value="Submit" />
+			
+			</form>
+
+		
+	</div>
+</div></h1>
+
+
+

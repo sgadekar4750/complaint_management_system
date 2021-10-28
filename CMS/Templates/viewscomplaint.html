@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{% static 'vc.css'%}">
+</head>
+<body>
+
+<div class="admin-login">
+		<form action="" method="post">
+			<button type="submit"><a href="{% url 'CMS:logout' %}">Logout</a></button>
+			<button type="submit"><a href="{% url 'CMS:aindex' %}">Back</a></button>
+		</form>
+</div>
+<center><h1>List Of Complaint</h1></center>
+ <table class="ZEBRA"> 
+<thead> 
+<tr> 
+   <th>Id</th>
+   <th>User Id</th>
+   <th>Date</th>
+   <th>Sub Muncipal Division</th>
+   <th>Area</th>
+   <th>Address</th>
+   <th>Complaint Descripation</th>
+   <th>Type Of Complaint</th>
+   <th>Status</th>
+   
+</tr> 
+</thead> 
+<tbody> 
+{% for i in data %}
+<tr>
+  <td>{{i.id}}</td>				
+  <td>{{i.user_id}}</td>
+  <td>{{i.date_created}}</td>
+  <td>{{i.sub_muncipal_division}}</td>
+  <td>{{i.area}}</td>
+  <td>{{i.address}}</td>
+  <td>{{i.complaint_desc}}</td>
+				
+  <td>{{i.type_of_complaint}}</td>
+				
+								
+				<td><a class="btn btn-sm btn-info" href="{% url 'CMS:update' i.user_id %}">Status<a></td>
+</tr>
+			{% endfor %}
+
+</tbody> 
+</table> 
+</body>
+</html>
+

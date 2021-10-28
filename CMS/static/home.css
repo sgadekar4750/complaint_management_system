@@ -1,0 +1,102 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+body {
+  background: linear-gradient(#141e30, #141e30);
+  font-family: 'Inter UI', sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+.Home-page {
+  width: 350px;
+  top: 40%;
+  left: 45%;
+  font-size: 20px;
+  transform:translate(-50%, -50);
+  position: absolute;
+  color: #ffff; 
+}
+.Home-page button{
+  color:#d4af37;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 10px 0;
+  padding: 10px 15px
+ 
+  
+  border: 1;
+  
+}
+
+.Home-page button:hover{ 
+  color: blue;
+
+}
+
+
+.admin-login {
+  position: absolute; 
+    top: 10px; 
+    right: 10px; 
+}
+
+.admin-login button{
+  color: green;
+  font-size: 10px;
+  font-weight: inherit;
+  margin: 15px, 0;
+  padding: 25px 25px
+  width: 35%;
+  border-radius: 5px;
+  border: 0;
+}
+.admin-login button {
+  color: green;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 10px 0;
+  padding: 10px 15px
+}
+
+.admin-login button:hover{
+  color: black;
+}
+
+.header h1{
+  color:#d4af37;
+  font-size: 25px;
+ 
+  
+  font-family: serif;
+  
+  
+}
+.header h3{
+  color:#d4af37;
+  font-size: 20px;
+ 
+  
+  font-family: serif;
+}
+.header center{
+  color:#d4af37;
+ 
+  
+  font-family: serif;
+  
+  
+}
+
+
+.Home-page {
+  color: #d4af37;
+  font-size: 35px;
+  font-family: serif;
+  margin: 15px, 0;
+  padding: 10px 15px
+  
+}

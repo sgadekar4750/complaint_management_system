@@ -1,0 +1,53 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'vc.css'%}">
+
+<div class="admin-login">
+		<form action="" method="post">
+			<button type="submit"><a href="{% url 'CMS:logoutp' %}">Logout</a></button>
+			<button type="submit"><a href="{% url 'CMS:index' %}">Back</a></button>
+		</form>
+</div>
+
+
+<form action="" method="POST">
+{% csrf_token %}
+
+
+<h1>Check Your Complaint Status Here:</h1>
+<br/>
+<br/>
+
+<h1>
+<div class="form-group">
+    <label for="idnumber">COMPLAINT ID</label>
+    <br><br>
+    <input type="text" class="form-control" id="idnumber" name="idnumber" placeholder="Complaint ID">
+    {{ form.idnumber.errors }}
+</div>
+
+
+
+<div class="form-group">
+    <button class="btn btn-success" type="submit">Submit</button>
+ </div>
+
+
+
+</form>
+<br/><br/><br/>
+
+{% if status.solved %}
+<div class="alert alert-info" role="alert">Your Complaint Status: <b>{{ status.solved }}</b></div>
+{% endif %}
+<br/>
+{% if status.comment %}
+<div class="alert alert-success" role="alert"><b>Reply:</b><pre> {{ status.comment }}</pre></div>
+{% endif %}</h1>
+<br/>
+
+</div>
+</div>
+
+
+
+
